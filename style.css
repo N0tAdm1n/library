@@ -9,13 +9,20 @@ body {
     flex-direction: column;
 }
 .header {
-    height: 10%;
+    /* height: 10%; */
 }
 .main {
-    height: 80%;
+    /* height: 80%; */
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(30px, 30px));
+    grid-template-columns: repeat(auto-fit, 100px);
+    gap: 10px;
+    justify-content: center;
+}
+.tile {
+    width: 100px;
+    height: 150px;
+    border: 2px solid black ;
 }
 .footer {
-    height: 10%;
+    /* height: 10%; */
 }
