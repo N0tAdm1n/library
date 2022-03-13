@@ -31,7 +31,7 @@ function getInformation() {
 function updateLibrary() {
   const bookTile = document.createElement("div");
 
-  const removeButton = document.createElement("div");
+  const removeButton = document.createElement("button");
   removeButton.textContent = "x";
   removeButton.classList.add("removeButton");
   bookTile.appendChild(removeButton);
@@ -56,8 +56,20 @@ function updateLibrary() {
   addButton.before(bookTile);
 }
 
+function removeTile() {
+  this.parentElement.remove();
+}
+
+function reinitRemoveButtonsListener() {
+  const removeButtons = Array.from(document.querySelectorAll(".removeButton"));
+  removeButtons.forEach((removeButton) => {
+    removeButton.addEventListener("click", removeTile);
+  });
+}
+
 const addButton = document.querySelector(".addTile");
 addButton.addEventListener("click", () => {
   getInformation();
   updateLibrary();
+  reinitRemoveButtonsListener(); //will initailize remove buttons event listener each time a new book is added
 });
