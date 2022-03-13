@@ -28,7 +28,31 @@ function getInformation() {
   addBook(title, author, pageNo, readStatus);
 }
 
+function updateLibrary() {
+  const bookTile = document.createElement("div");
+
+  const title = document.createElement("div");
+  title.textContent = `${myLibrary[myLibrary.length - 1].title}`;
+  bookTile.appendChild(title);
+
+  const author = document.createElement("div");
+  author.textContent = `${myLibrary[myLibrary.length - 1].author}`;
+  bookTile.appendChild(author);
+
+  const pageNo = document.createElement("div");
+  pageNo.textContent = `${myLibrary[myLibrary.length - 1].pageNo} pages`;
+  bookTile.appendChild(pageNo);
+
+  const readStatus = document.createElement("div");
+  readStatus.textContent = `${myLibrary[myLibrary.length - 1].readStatus}`;
+  bookTile.appendChild(readStatus);
+
+  bookTile.classList.add("tile");
+  addButton.before(bookTile);
+}
+
 const addButton = document.querySelector(".addTile");
 addButton.addEventListener("click", () => {
   getInformation();
+  updateLibrary();
 });
