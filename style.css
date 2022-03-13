@@ -1,0 +1,21 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+.header {
+    height: 10%;
+}
+.main {
+    height: 80%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30px, 30px));
+}
+.footer {
+    height: 10%;
+}
