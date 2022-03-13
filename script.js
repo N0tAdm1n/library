@@ -27,9 +27,14 @@ function getInformation() {
   let readStatus = window.prompt("Read book?", null);
   addBook(title, author, pageNo, readStatus);
 }
-
+// update the library in dom
 function updateLibrary() {
   const bookTile = document.createElement("div");
+
+  const removeButton = document.createElement("div");
+  removeButton.textContent = "x";
+  removeButton.classList.add("removeButton");
+  bookTile.appendChild(removeButton);
 
   const title = document.createElement("div");
   title.textContent = `${myLibrary[myLibrary.length - 1].title}`;
