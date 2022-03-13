@@ -19,3 +19,16 @@ function checkLibrary() {
     console.log(book.info());
   }
 }
+//get information from user and add a Book to myLibrary
+function getInformation() {
+  let title = window.prompt("Title", null);
+  let author = window.prompt("Author", null);
+  let pageNo = window.prompt("No. of pages", null);
+  let readStatus = window.prompt("Read book?", null);
+  addBook(title, author, pageNo, readStatus);
+}
+
+const addButton = document.querySelector(".addTile");
+addButton.addEventListener("click", () => {
+  getInformation();
+});
