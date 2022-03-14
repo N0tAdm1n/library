@@ -55,15 +55,32 @@ function updateLibrary() {
   bookTile.classList.add("tile");
   addButton.before(bookTile);
 }
-
-function removeTile() {
-  this.parentElement.remove();
+// remove the tile from dom
+function removeTile(removeButton) {
+  removeButton.parentElement.remove();
 }
 
+function removeFromMyLibrary(removeButton) {
+  let arrayIndex = null;
+  console.log(removeButton.nextElementSibling.textContent);
+  const title = removeButton.nextElementSibling.textContent;
+  for (let i = 0; i < myLibrary.length - 1; i++) {
+    if (myLibrary[i].title == title) {
+      arrayIndex = i;
+      console.log(arrayIndex);
+      break;
+    }
+  }
+  myLibrary.splice(arrayIndex, 1);
+}
+//removeButtons event listener
 function reinitRemoveButtonsListener() {
   const removeButtons = Array.from(document.querySelectorAll(".removeButton"));
   removeButtons.forEach((removeButton) => {
-    removeButton.addEventListener("click", removeTile);
+    removeButton.addEventListener("click", () => {
+      removeFromMyLibrary(removeButton);
+      removeTile(removeButton);
+    });
   });
 }
 
