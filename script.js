@@ -61,26 +61,28 @@ function removeTile(removeButton) {
 }
 
 function removeFromMyLibrary(removeButton) {
-  let arrayIndex = null;
-  console.log(removeButton.nextElementSibling.textContent);
+  let arrayIndex;
   const title = removeButton.nextElementSibling.textContent;
-  for (let i = 0; i < myLibrary.length - 1; i++) {
+  for (let i = 0; i < myLibrary.length; i++) {
     if (myLibrary[i].title == title) {
       arrayIndex = i;
-      console.log(arrayIndex);
+      myLibrary.splice(arrayIndex, 1);
       break;
     }
   }
-  myLibrary.splice(arrayIndex, 1);
 }
 //removeButtons event listener
 function reinitRemoveButtonsListener() {
   const removeButtons = Array.from(document.querySelectorAll(".removeButton"));
   removeButtons.forEach((removeButton) => {
-    removeButton.addEventListener("click", () => {
-      removeFromMyLibrary(removeButton);
-      removeTile(removeButton);
-    });
+    removeButton.addEventListener(
+      "click",
+      () => {
+        removeFromMyLibrary(removeButton);
+        removeTile(removeButton);
+      },
+      { once: true }
+    );
   });
 }
 
