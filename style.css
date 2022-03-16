@@ -64,5 +64,34 @@ body {
     background-color: aquamarine;
 }
 .hidden {
-    display: none;
+    /* display: none; */
+}
+.get-data-form {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: 20px;
+    width: 600px;
+    position: fixed;
+    top: 20vh;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+
+    border: 2px solid black;
+    font-size: 1.3rem;
+}
+.get-data-form > input {
+    height: 2.5rem;
+    font-size: 1.7rem;
+}
+.get-data-form-buttons {
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+} 
+.get-data-form-buttons > button {
+    height: 3rem;
+    width: 6rem;
+    font-size: 1.6rem;
 }
