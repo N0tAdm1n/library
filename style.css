@@ -35,6 +35,14 @@ body {
     gap: 5px;
     text-align: center;
 }
+.remove-button {
+    align-self: flex-end;
+    padding: 0px 5px;
+    margin: 5px;
+    background-color: transparent;
+    border: none;
+    font-size: 1.2rem;
+}
 .add-tile {
     display: flex;
     flex-direction: column;
