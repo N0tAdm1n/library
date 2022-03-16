@@ -28,6 +28,23 @@ body {
 }
 .tile {
     border: 2px solid black ;
+    font-size: 1.3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    text-align: center;
+}
+.add-tile {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+.add-tile>.material-icons {
+    font-size: 9rem;
 }
 .footer {
     position: fixed;
