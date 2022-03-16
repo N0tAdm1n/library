@@ -33,7 +33,7 @@ function updateLibrary() {
 
   const removeButton = document.createElement("button");
   removeButton.textContent = "x";
-  removeButton.classList.add("removeButton");
+  removeButton.classList.add("remove-button");
   bookTile.appendChild(removeButton);
 
   const title = document.createElement("div");
