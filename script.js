@@ -13,11 +13,12 @@ Book.prototype.info = function () {
 function addBook(title, author, pageNo, readStatus) {
   myLibrary.push(new Book(title, author, pageNo, readStatus));
 }
-//to loop every book in myLibrary
-function checkLibrary() {
+//check if a book already exists in myLibrary
+function checkLibrary(title) {
   for (const book of myLibrary) {
-    console.log(book.info());
+    if (title == book.title) return false;
   }
+  return true;
 }
 //get information from user and add a Book to myLibrary
 function getInformation() {
@@ -25,7 +26,10 @@ function getInformation() {
   let author = window.prompt("Author", null);
   let pageNo = window.prompt("No. of pages", null);
   let readStatus = window.prompt("Read book?", null);
-  addBook(title, author, pageNo, readStatus);
+  if (checkLibrary(title)) {
+    addBook(title, author, pageNo, readStatus);
+    return true;
+  } else return false;
 }
 // update the library in dom
 function updateLibrary() {
@@ -73,7 +77,7 @@ function removeFromMyLibrary(removeButton) {
 }
 //removeButtons event listener
 function reinitRemoveButtonsListener() {
-  const removeButtons = Array.from(document.querySelectorAll(".removeButton"));
+  const removeButtons = Array.from(document.querySelectorAll(".remove-button"));
   removeButtons.forEach((removeButton) => {
     removeButton.addEventListener(
       "click",
@@ -88,7 +92,8 @@ function reinitRemoveButtonsListener() {
 
 const addButton = document.querySelector(".add-tile");
 addButton.addEventListener("click", () => {
-  getInformation();
-  updateLibrary();
-  reinitRemoveButtonsListener(); //will initailize remove buttons event listener each time a new book is added
+  if (getInformation()) {
+    updateLibrary();
+    reinitRemoveButtonsListener(); //will initailize remove buttons event listener each time a new book is added
+  }
 });
