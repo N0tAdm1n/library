@@ -32,8 +32,8 @@ function updateLibrary() {
   const bookTile = document.createElement("div");
 
   const removeButton = document.createElement("button");
-  removeButton.textContent = "x";
-  removeButton.classList.add("remove-button");
+  removeButton.textContent = "delete";
+  removeButton.classList.add("material-icons-outlined", "remove-button");
   bookTile.appendChild(removeButton);
 
   const title = document.createElement("div");
