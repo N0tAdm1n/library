@@ -86,7 +86,7 @@ function reinitRemoveButtonsListener() {
   });
 }
 
-const addButton = document.querySelector(".addTile");
+const addButton = document.querySelector(".add-tile");
 addButton.addEventListener("click", () => {
   getInformation();
   updateLibrary();
