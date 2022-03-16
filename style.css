@@ -37,11 +37,10 @@ body {
 }
 .remove-button {
     align-self: flex-end;
-    padding: 0px 5px;
     margin: 5px;
     background-color: transparent;
     border: none;
-    font-size: 1.2rem;
+    font-size: 1.8rem;
 }
 .add-tile {
     display: flex;
