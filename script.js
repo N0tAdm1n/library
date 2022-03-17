@@ -22,10 +22,10 @@ function checkLibrary(title) {
 }
 //get information from user and add a Book to myLibrary
 function getInformation() {
-  let title = window.prompt("Title", null);
-  let author = window.prompt("Author", null);
-  let pageNo = window.prompt("No. of pages", null);
-  let readStatus = window.prompt("Read book?", null);
+  const title = document.querySelector("#title").value;
+  const author = document.querySelector("#author").value;
+  const pageNo = document.querySelector("#pages").value;
+  const readStatus = document.querySelector("#isRead").value;
   if (checkLibrary(title)) {
     addBook(title, author, pageNo, readStatus);
     return true;
