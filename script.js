@@ -89,14 +89,17 @@ function reinitRemoveButtonsListener() {
     );
   });
 }
-
+const form = document.querySelector(".get-data-form");
 const addButton = document.querySelector(".add-tile");
-addButton.addEventListener("click", () => {});
+addButton.addEventListener("click", () => {
+  form.classList.toggle("hidden");
+});
 
 const addBookButton = document.querySelector(".add-button");
 addBookButton.addEventListener("click", () => {
   if (getInformation()) {
     updateLibrary();
     reinitRemoveButtonsListener(); //will initailize remove buttons event listener each time a new book is added
+    form.classList.toggle("hidden");
   }
 });
