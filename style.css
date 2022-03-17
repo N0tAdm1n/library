@@ -63,9 +63,6 @@ body {
     height: 50px;
     background-color: aquamarine;
 }
-.hidden {
-    /* display: none; */
-}
 .get-data-form {
     display: flex;
     flex-direction: column;
@@ -94,4 +91,7 @@ body {
     height: 3rem;
     width: 6rem;
     font-size: 1.6rem;
+}
+.hidden {
+    display: none;
 }
