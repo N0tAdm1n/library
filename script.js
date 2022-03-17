@@ -91,7 +91,10 @@ function reinitRemoveButtonsListener() {
 }
 
 const addButton = document.querySelector(".add-tile");
-addButton.addEventListener("click", () => {
+addButton.addEventListener("click", () => {});
+
+const addBookButton = document.querySelector(".add-button");
+addBookButton.addEventListener("click", () => {
   if (getInformation()) {
     updateLibrary();
     reinitRemoveButtonsListener(); //will initailize remove buttons event listener each time a new book is added
