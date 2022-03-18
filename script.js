@@ -77,6 +77,18 @@ function removeFromMyLibrary(removeButton) {
     }
   }
 }
+//will clear the values in the form
+function clearForm() {
+  const title = document.querySelector("#title");
+  const author = document.querySelector("#author");
+  const pageNo = document.querySelector("#pages");
+  const readStatus = document.querySelector("#isRead");
+  title.value = "";
+  author.value = "";
+  pageNo.value = "";
+  readStatus.checked = false;
+}
+
 //removeButtons event listener
 function reinitRemoveButtonsListener() {
   const removeButtons = Array.from(document.querySelectorAll(".remove-button"));
@@ -91,12 +103,13 @@ function reinitRemoveButtonsListener() {
     );
   });
 }
+//for the big plus button
 const form = document.querySelector(".get-data-form");
 const addButton = document.querySelector(".add-tile");
 addButton.addEventListener("click", () => {
   form.classList.toggle("hidden");
 });
-
+//for the add button on pop up
 const addBookButton = document.querySelector(".add-button");
 addBookButton.addEventListener("click", () => {
   if (getInformation()) {
@@ -104,4 +117,5 @@ addBookButton.addEventListener("click", () => {
     reinitRemoveButtonsListener(); //will initailize remove buttons event listener each time a new book is added
     form.classList.toggle("hidden");
   }
+  clearForm();
 });
