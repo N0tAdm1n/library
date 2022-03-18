@@ -3,6 +3,13 @@
     padding: 0;
     box-sizing: border-box;
 }
+:root {
+    --blue: #22223B;
+    --red: #F21B3F;
+    --white: #FFFAFF;
+    --light-blue: #1EA896;
+    --grey: #8E8358;
+}
 body {
     height: 100vh;
     display: flex;
