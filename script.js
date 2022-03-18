@@ -103,8 +103,8 @@ function reinitRemoveButtonsListener() {
     );
   });
 }
+const form = document.querySelector(".get-data-form"); //form
 //for the big plus button
-const form = document.querySelector(".get-data-form");
 const addButton = document.querySelector(".add-tile");
 addButton.addEventListener("click", () => {
   form.classList.toggle("hidden");
@@ -117,5 +117,11 @@ addBookButton.addEventListener("click", () => {
     reinitRemoveButtonsListener(); //will initailize remove buttons event listener each time a new book is added
     form.classList.toggle("hidden");
   }
+  clearForm();
+});
+//for cancel button on popup
+const cancelBookButton = document.querySelector(".cancel-button");
+cancelBookButton.addEventListener("click", () => {
+  form.classList.toggle("hidden");
   clearForm();
 });
