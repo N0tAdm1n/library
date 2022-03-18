@@ -79,7 +79,7 @@ body {
 .get-data-form {
     display: flex;
     flex-direction: column;
-    gap: 2px;
+    gap: 4px;
     padding: 20px;
     width: 600px;
     position: fixed;
@@ -93,10 +93,15 @@ body {
     background-color: var(--white);
     border-radius: 10px;
 }
-.get-data-form > input {
+.get-data-form input {
     height: 2.5rem;
     font-size: 1.4rem;
     padding: 0 5px;
+}
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 .get-data-form-buttons {
     display: flex;
