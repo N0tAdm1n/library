@@ -77,20 +77,23 @@ body {
 
     border: 2px solid black;
     font-size: 1.3rem;
+    background-color: white;
+    border-radius: 10px;
 }
 .get-data-form > input {
     height: 2.5rem;
-    font-size: 1.7rem;
+    font-size: 1.4rem;
+    padding: 0 5px;
 }
 .get-data-form-buttons {
     display: flex;
-    gap: 50px;
+    gap: 40px;
     justify-content: center;
 } 
 .get-data-form-buttons > button {
     height: 3rem;
     width: 6rem;
-    font-size: 1.6rem;
+    font-size: 1.2rem;
 }
 .hidden {
     display: none;
