@@ -98,7 +98,12 @@ function clearForm() {
   pageNo.value = "";
   readStatus.checked = false;
 }
-
+//update readStatus in the myLibrary[]
+function changeReadStatus(title) {
+  for (const book of myLibrary) {
+    if (title == book.title) book.readStatus = true;
+  }
+}
 //removeButtons event listener
 function reinitRemoveButtonsListener() {
   const removeButtons = Array.from(document.querySelectorAll(".remove-button"));
@@ -143,6 +148,7 @@ function initNotCompletedEventListener() {
     item.addEventListener("click", () => {
       item.textContent = "Completed";
       item.classList.remove("not-started");
+      changeReadStatus(item.parentNode.querySelector(".title").textContent);
     });
   });
 }
