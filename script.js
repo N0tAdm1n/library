@@ -125,6 +125,7 @@ addBookButton.addEventListener("click", () => {
   if (getInformation()) {
     updateLibrary();
     reinitRemoveButtonsListener(); //will initailize remove buttons event listener each time a new book is added
+    initNotCompletedEventListener(); //will initailize cot-completed event listener
     form.classList.toggle("hidden");
   }
   clearForm();
@@ -135,3 +136,13 @@ cancelBookButton.addEventListener("click", () => {
   form.classList.toggle("hidden");
   clearForm();
 });
+// event listener for not completed
+function initNotCompletedEventListener() {
+  const notStarted = Array.from(document.querySelectorAll(".not-started"));
+  notStarted.forEach((item) => {
+    item.addEventListener("click", () => {
+      item.textContent = "Completed";
+      item.classList.remove("not-started");
+    });
+  });
+}
