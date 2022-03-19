@@ -56,10 +56,13 @@ function updateLibrary() {
   bookTile.appendChild(pageNo);
 
   const readStatus = document.createElement("div");
-  readStatus.textContent = myLibrary[myLibrary.length - 1].readStatus
-    ? `Completed`
-    : `Not Started`;
   readStatus.classList.add("readStatus");
+  if (myLibrary[myLibrary.length - 1].readStatus) {
+    readStatus.textContent = `Completed`;
+  } else {
+    readStatus.textContent = `Not Started`;
+    readStatus.classList.add("not-started");
+  }
   bookTile.appendChild(readStatus);
 
   bookTile.classList.add("tile");
