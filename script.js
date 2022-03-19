@@ -26,6 +26,9 @@ function getInformation() {
   const author = document.querySelector("#author").value;
   const pageNo = document.querySelector("#pages").value;
   const readStatus = document.querySelector("#isRead").checked;
+  if (title == "" || author == "" || pageNo == "") {
+    getInformation();
+  }
   if (checkLibrary(title)) {
     addBook(title, author, pageNo, readStatus);
     return true;
