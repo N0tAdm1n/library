@@ -47,19 +47,19 @@ function updateLibrary() {
 
   const author = document.createElement("div");
   author.textContent = `${myLibrary[myLibrary.length - 1].author}`;
-  title.classList.add("author");
+  author.classList.add("author");
   bookTile.appendChild(author);
 
   const pageNo = document.createElement("div");
   pageNo.textContent = `${myLibrary[myLibrary.length - 1].pageNo} pages`;
-  title.classList.add("pageNo");
+  pageNo.classList.add("pageNo");
   bookTile.appendChild(pageNo);
 
   const readStatus = document.createElement("div");
   readStatus.textContent = myLibrary[myLibrary.length - 1].readStatus
     ? `Completed`
     : `Not Started`;
-  title.classList.add("readStatus");
+  readStatus.classList.add("readStatus");
   bookTile.appendChild(readStatus);
 
   bookTile.classList.add("tile");
